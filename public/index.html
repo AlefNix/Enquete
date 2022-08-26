@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquete</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap" rel="stylesheet">
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
+
+        body {
+            background: rgba(255, 255, 255, 0);
+            font-family: 'Barlow', sans-serif;
+        }
+        .widget{
+            background: rgba(0, 0, 0, 0);
+            width: 500px;
+        }
+
+        h1{
+           font-size: 35px;
+           color: #045d14;
+           margin-left: 10px;
+           margin-top: -10px;
+       }
+       h2{
+        font-size: 25px;
+           color: #045d14;
+           margin-left: 15px;
+       
+       }
+       .secao{
+           margin-left: 5px;
+           letter-spacing: 1.2px;
+           font-weight: bold;
+           font-size: 18px;
+           margin-left: 10px;
+       }
+
+       .secao , .nao{
+           margin-top: 2px;
+       }
+
+       .botoes{
+          display: flex;
+          margin-left: 10px;
+          margin-top: 16px;
+          gap: 100px;
+       }
+
+       .btn-porcento , .btn {
+        margin-top: 10px;
+         padding: 8px;
+         border: none;
+         border-radius: 8px;
+         background: #045d14;
+         color: #fff;
+         font-weight: bold;
+         cursor: pointer;
+       }
+        .btn:hover{
+            background:rgb(0, 255, 102) ;
+            color: aliceblue;
+            }
+        .btn:disabled{
+                background-color: #000;
+                color: white;
+                cursor: default;
+           }
+       .opt{
+        font-size: 20px;
+       }
+
+       .enviar{
+          margin: 0;
+       }
+       .container{
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+       }
+       .canvasjs-chart-credit
+{
+    display: none !important;
+}
+       @media(max-width:321px){
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+       .widget{
+            width: 230px;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .resultado{
+            height: 200px;
+            width:270px;
+            margin-left: 20px;
+            margin-right: 35px;
+        }
+    }
+    @media (min-width:322px){
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+       .widget{
+            width: 300px;
+        }
+        .resultado{
+            height: 200px;
+            width:310px;
+        }
+    }
+    
+    @media(min-width:450px){
+        
+       .widget{
+            width: 350px;
+        }
+        .resultado{
+            height: 200px;
+            width:350px;
+        }
+    }
+    @media(min-width:650px){
+        .container{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+       }
+       .widget{
+            width: 300px;
+        }
+        .resultado{
+            height: 250px;
+            width:320px;
+        }
+    }
+
+    @media(min-width:768px){
+       .widget{
+            width: 400px;
+        }
+        .resultado{
+            height: 250px;
+            width:420px;
+        }
+    }
+
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <div class="widget">
+        <h1>Enquete Online</h1>
+        <h2>Qual a melhor rádio de Oliveira?</h2>
+  <div class="opt">
+    <form id="votos">
+            A<input type="radio" name="os" value="A" class="sim"> DC2 FM<br>
+            B<input type="radio" name="os" value="B" class="nao">  Nossa FM<br>
+            C<input type="radio" name="os" value="C" class="nao"> Show FM<br>
+            <button type="submit" class="btn" id="btn" value="Enviar" onclick="adiciona()" >Enviar</button>
+        </form></div>
+</div><div class="resultado" id="chartContainer" ></div></div>
+<script>
+ function confere(){
+  if (localStorage.getItem("gazeta1") == "gazeta1") {
+    document.getElementById("btn").disabled = true;
+  } else {
+    document.getElementById("btn").disabled = false;
+  }};
+  confere();
+  </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.1.1-beta/pusher.min.js" integrity="sha512-BPyqC/fsFB0wLkveLSwmEDvb8AHSezUQqCSL2mMieTTPvC4BfjIJIuLVH+4M6cRJFvYiwvdW1DKcVg77g4Mlrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"> </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+</body>
+
+</html>
