@@ -176,8 +176,12 @@
  function confere(){
   if (localStorage.getItem("gazeta2") == "gazeta2") {
     document.getElementById("btn").disabled = true;
+    document.querySelector(".sim").disabled = true;
+    document.querySelector(".nao").disabled = true;
   } else {
     document.getElementById("btn").disabled = false;
+    document.querySelector(".sim").disabled = false;
+    document.querySelector(".nao").disabled = false;
   }};
   confere();
   </script>
