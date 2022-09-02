@@ -1,5 +1,5 @@
-const form = document.getElementById('votos');
-form.addEventListener('submit',(e)=>{
+const formu = document.getElementById('votos');
+formu.addEventListener('submit',(e)=>{
   const choice = document.querySelector('input[name=os]:checked').value;
   const data = {os: choice};
 
