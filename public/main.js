@@ -30,22 +30,22 @@ fetch('https://enquetemap.herokuapp.com/enquete')
         const voteCounts = votes.reduce((acc,vote) => ((acc[vote.os] = (acc[vote.os] || 0) + parseInt(vote.points)),acc),{});
         const votoA = (voteCounts.A);
         const votoB = (voteCounts.B);
-        const votoC = (voteCounts.C);
+        //const votoC = (voteCounts.C);
   
         const votePerA = (votoA * 100)/totalVotes ;
         const votePerB = (votoB * 100)/totalVotes ;
-        const votePerC = (votoC * 100)/totalVotes ;
+        //const votePerC = (votoC * 100)/totalVotes ;
 
         let votosA = votePerA.toFixed(2);
         let votosB =votePerB.toFixed(2);
-        let votosC = votePerC.toFixed(2);
+        //let votosC = votePerC.toFixed(2);
   
         if(voteCounts.A === undefined){voteCounts.A = 0; votosA = 0};
         if(voteCounts.B === undefined){voteCounts.B = 0; votosB = 0};
-        if(voteCounts.C === undefined){voteCounts.C = 0; votosC = 0};
+        //if(voteCounts.C === undefined){voteCounts.C = 0; votosC = 0};
   
         let dataPoints = [
-            {label : `C: ${votosC}%`, y:votoC, color: "#FFEE00"},
+            //{label : `C: ${votosC}%`, y:votoC, color: "#FFEE00"},
             {label : `B: ${votosB}%`, y:votoB, color: "#C24642"},
             {label : `A: ${votosA}%`, y:votoA, color: "#0F68AB"}
         ];
@@ -57,7 +57,7 @@ fetch('https://enquetemap.herokuapp.com/enquete')
                 animationEnable: true,
                 theme: 'theme1',
                 title:{
-                    text: `Total de Votos: ${voteCounts.A + voteCounts.B + voteCounts.C}`,
+                    text: `Total de Votos: ${voteCounts.A + voteCounts.B /*+ voteCounts.C*/}`,
                     fontSize: 20,
                     fontColor: "black",
                 },
