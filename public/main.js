@@ -15,6 +15,8 @@ formu.addEventListener('submit',(e)=>{
     .catch(err => console.log(err));
   
         document.getElementById("btn").disabled = true;
+        document.querySelector(".sim").disabled = true;
+        document.querySelector(".nao").disabled = true;
         localStorage.setItem("gazeta2","gazeta2");
         location.reload();
 
