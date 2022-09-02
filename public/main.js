@@ -15,7 +15,7 @@ form.addEventListener('submit',(e)=>{
     .catch(err => console.log(err));
   
         document.getElementById("btn").disabled = true;
-        localStorage.setItem("gazeta1","gazeta1");
+        localStorage.setItem("gazeta2","gazeta2");
         location.reload();
 
     e.preventDefault();
