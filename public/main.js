@@ -17,7 +17,8 @@ formu.addEventListener('submit',(e)=>{
         document.getElementById("btn").disabled = true;
         document.querySelector(".sim").disabled = true;
         document.querySelector(".nao").disabled = true;
-        localStorage.setItem("gazeta2","gazeta2");
+        localStorage.setItem("1gazeta","1gazeta");
+        Cookies.set('1gazeta', '1gazeta', { expires: 9999 });
         location.reload();
 
     e.preventDefault();
