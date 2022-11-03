@@ -11,7 +11,7 @@ function confere11(){
 
 };
     confere11();
-
+/*
 function confere21(){
  if (Cookies.get("1gazeta") == "1gazeta"){
     document.getElementById("btn").disabled = true;
@@ -25,7 +25,7 @@ function confere21(){
 
 };
     confere21();
-
+*/
 const formu = document.getElementById('votos');
 formu.addEventListener('submit',(e)=>{
   const choice = document.querySelector('input[name=os]:checked').value;
@@ -46,7 +46,7 @@ formu.addEventListener('submit',(e)=>{
         document.querySelector(".sim").disabled = true;
         document.querySelector(".nao").disabled = true;
         localStorage.setItem("1gazeta","1gazeta");
-        Cookies.set('1gazeta', '1gazeta', { expires: 9999 });
+        //Cookies.set('1gazeta', '1gazeta', { expires: 9999 });
         location.reload();
 
     e.preventDefault();
