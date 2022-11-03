@@ -1,4 +1,4 @@
-function confere(){
+function confere11(){
  if (localStorage.getItem("1gazeta") == "1gazeta" ){
     document.getElementById("btn").disabled = true;
     document.querySelector(".sim").disabled = true;
@@ -10,9 +10,9 @@ function confere(){
   }
 
 };
-    confere();
+    confere11();
 
-function confere2(){
+function confere21(){
  if (Cookies.get("1gazeta") == "1gazeta"){
     document.getElementById("btn").disabled = true;
     document.querySelector(".sim").disabled = true;
@@ -24,7 +24,7 @@ function confere2(){
   }
 
 };
-    confere2();
+    confere21();
 
 const formu = document.getElementById('votos');
 formu.addEventListener('submit',(e)=>{
