@@ -158,7 +158,7 @@
     </style>
 </head>
 
-<body>
+<body pageshow="confere11()">
     <div class="container">
     <div class="widget">
         <h1>Enquete Online</h1>
@@ -179,6 +179,21 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="main.js"> </script>
+    <script>
+        function confere11(){
+ if (localStorage.getItem("1gazeta") == "1gazeta" ){
+    document.getElementById("btn").disabled = true;
+    document.querySelector(".sim").disabled = true;
+    document.querySelector(".nao").disabled = true;
+  } else {
+    document.getElementById("btn").disabled = false;
+    document.querySelector(".sim").disabled = false;
+    document.querySelector(".nao").disabled = false;
+  }
+
+};
+        confere11();
+    </script>
 </body>
 
 </html>
