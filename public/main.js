@@ -1,17 +1,3 @@
-function confere11(){
- if (localStorage.getItem("1gazeta") == "1gazeta" ){
-    document.getElementById("btn").disabled = true;
-    document.querySelector(".sim").disabled = true;
-    document.querySelector(".nao").disabled = true;
-  } else {
-    document.getElementById("btn").disabled = false;
-    document.querySelector(".sim").disabled = false;
-    document.querySelector(".nao").disabled = false;
-  }
-
-};
-    confere11();
-
 function confere21(){
  if (Cookies.get("1gazeta") == "1gazeta"){
     document.getElementById("btn").disabled = true;
@@ -25,6 +11,20 @@ function confere21(){
 
 };
     confere21();
+    
+function confere11(){
+ if (localStorage.getItem("1gazeta") == "1gazeta" ){
+    document.getElementById("btn").disabled = true;
+    document.querySelector(".sim").disabled = true;
+    document.querySelector(".nao").disabled = true;
+  } else {
+    document.getElementById("btn").disabled = false;
+    document.querySelector(".sim").disabled = false;
+    document.querySelector(".nao").disabled = false;
+  }
+
+};
+    confere11();
 
 const formu = document.getElementById('votos');
 formu.addEventListener('submit',(e)=>{
