@@ -1,5 +1,5 @@
 function confere21(){
- if (Cookies.get("1gazeta") == "1gazeta"){
+ if (Cookies.get("2gazeta") == "2gazeta"){
     document.getElementById("btn").disabled = true;
     document.querySelector(".sim").disabled = true;
     document.querySelector(".nao").disabled = true;
@@ -13,7 +13,7 @@ function confere21(){
     confere21();
     
 function confere11(){
- if (localStorage.getItem("1gazeta") == "1gazeta" ){
+ if (localStorage.getItem("2gazeta") == "2gazeta" ){
     document.getElementById("btn").disabled = true;
     document.querySelector(".sim").disabled = true;
     document.querySelector(".nao").disabled = true;
@@ -45,8 +45,8 @@ formu.addEventListener('submit',(e)=>{
         document.getElementById("btn").disabled = true;
         document.querySelector(".sim").disabled = true;
         document.querySelector(".nao").disabled = true;
-        localStorage.setItem("1gazeta","1gazeta");
-        Cookies.set('1gazeta', '1gazeta', { expires: 9999 });
+        localStorage.setItem("2gazeta","2gazeta");
+        Cookies.set('2gazeta', '2gazeta', { expires: 9999 });
         location.reload();
 
     e.preventDefault();
